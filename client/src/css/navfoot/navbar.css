@@ -1,0 +1,37 @@
+nav{
+    width: 90vw;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 5vw;
+    z-index: 100;
+    transition: 0.3s ease;
+}
+
+nav h2{
+    color: #9BE8D8;
+}
+
+#nav-links ul{
+    display: flex;
+}
+
+#nav-links a{
+    text-decoration: none;
+}
+
+#nav-links li{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    margin-left: 4vw;
+}
+
+.scrolling-active{
+    background-color: #1D5B79; 
+    /* border-bottom: 1px solid #C2884D; */
+    border-bottom: 0.5px solid #9BE8D8;
+}

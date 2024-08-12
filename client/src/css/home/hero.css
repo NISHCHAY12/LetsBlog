@@ -1,0 +1,91 @@
+.hero{
+    /* width: 100vw; */
+    height: 100vh;
+    background-color: #1D5B79;
+    overflow: hidden;
+}
+
+#banner-hero{
+    background-image: url('../../assets/images/banner.jpg');
+    /* width: 100vw; */
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#black{
+    margin-top: -8vh;
+    color: black;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 3rem;
+}
+
+#white{
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: -2vh;
+}
+
+#intro{
+    text-align: center;
+    margin-top: -2vh;
+    color: white;
+}
+
+
+
+@media screen and (max-width:450px) {
+    .hero{
+        height: 90vh;
+        background-color: #1D5B79;
+    }
+    
+    #banner-hero{
+        height: 70vh;
+    }
+    
+    #white{
+        color: white;
+        text-align: center;
+        font-size: 1.9rem;
+        margin-top: 0vh;
+    }
+    
+    #intro{
+        text-align: center;
+        margin-top: 10vh;
+        color: white;
+    }
+
+    @media screen and (max-width:450px) and (min-width:380px) {
+        #black{
+            margin-top: -5vh;
+            color: black;
+            font-size: 1.9rem;
+        }
+    }
+
+    @media screen and (max-width:380px) {
+        #black{
+            margin-top: -5vh;
+            color: black;
+            font-size: 1.8rem;
+        }
+    }
+
+    @media screen and (max-width:300px) {
+        #black{
+            margin-top: -12vh;
+            margin-bottom: 0;
+            color: black;
+            font-size: 1.8rem;
+        }
+
+        #intro{
+            margin-top: 4vh;
+        }
+    }
+}

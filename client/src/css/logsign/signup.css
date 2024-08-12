@@ -1,0 +1,90 @@
+.reg-block{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../../assets/images/calm.jpg");
+    background-blend-mode: darken;
+    background-color: #00000075;
+    background-position: center;
+}
+
+#cloud{
+    background-color: #1D5B79;
+    width: 40vw;
+    min-height: 55vh;
+    box-shadow: 0 8px 10px 5px rgba(74, 74, 74, 0.3);
+    border-radius: 2vh;
+    margin-inline: auto;
+    position: relative;
+    margin-top: -28vh;
+    padding-block: 5vh;
+    padding-inline: 5vw;
+    color: white;
+    display: flex;
+}
+
+#form{
+    width: 25vw;
+    overflow: hidden;
+}
+
+#img-reg{
+    width: 15vw;
+    margin-left: 2vw;
+    margin-top: 15vh;
+}
+
+.fieldreg{
+    border-bottom: 2px solid white;
+    font-size: 1.1rem;
+    margin-bottom: 4vh;
+    display: flex;
+}
+
+.fieldreg label{
+    margin-right: 1vw;
+    color: #edfffb !important;
+}
+
+.fieldreg input{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 1.1rem;
+    overflow: hidden;
+    width: 25vw;
+}
+
+.fieldreg input::placeholder{
+    color: #edfffb;
+    font-size: 0.8rem;
+}
+
+.fieldreg input::-webkit-outer-spin-button,
+.fieldreg input::-webkit-inner-spin-button {
+        display: none;
+}
+
+.sub-bttn{
+    padding-block: 2vh;
+    padding-inline: 3vw;
+    border: 2px solid #ffffff;
+    background: none;
+    color: white;
+    border-radius: 1vh;
+    transition: 0.3s ease;
+    align-items: center;
+}
+
+.sub-bttn:hover{
+    background: rgba(0, 0, 0, 0.518);
+    color: greenyellow;
+    border-color: greenyellow;
+}
+
+.lnk-log{
+    margin-left: 4vw;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: greenyellow;
+}

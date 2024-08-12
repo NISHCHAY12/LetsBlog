@@ -1,0 +1,62 @@
+.imgsec{
+    height: 40vh;
+    margin-top: -8vh;
+    border-radius: 50vh 50vh 0 0;
+    /* background-color: #1D5B79;
+     */
+     background: linear-gradient(to bottom , rgba(0, 0, 0, 0.05) , rgb(0, 35, 50));
+     padding-top: 25vh;
+     text-align: center;
+}
+
+.imgsec h2{
+    color: aliceblue;
+    margin-right: 3vw;
+}
+
+.imgsec form{
+    text-align: center;
+    width: 100%;
+    display: flex;
+}
+
+#picture{
+    /* opacity: 0.2; */
+    margin-top: 8vh;
+    margin-inline: auto;
+    margin-right: 0;
+    color: rgb(241, 248, 255);
+}
+
+#picture[type = "file"]::file-selector-button{
+    color: aliceblue;
+    background: none;
+    border: 1px solid white;
+    outline: none;
+    padding: 1vh;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+#subimg{
+    margin-top: 8vh;
+    width: 10vw;
+    margin-inline: auto;
+    margin-left: 0;
+    padding: 1vh;
+    font-size: 1rem;
+    color: greenyellow;
+    background-color: #1D5B79;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+#subimg:hover{
+    color: rgb(254, 254, 254);
+    background-color: #003845;
+    animation: flash; 
+    animation-duration: 1s;
+}

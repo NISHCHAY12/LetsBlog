@@ -1,0 +1,33 @@
+#cloud-log{
+    background-color: #1D5B79;
+    width: 40vw;
+    min-height: 30vh;
+    box-shadow: 0 8px 10px 5px rgba(74, 74, 74, 0.1);
+    border-radius: 2vh;
+    margin-inline: auto;
+    position: relative;
+    margin-top: -15vh;
+    padding-block: 5vh;
+    padding-inline: 5vw;
+    color: white;
+    display: flex;
+}
+
+#img-log{
+    width: 15vw;
+    margin-left: 2vw;
+    margin-top: 5vh;
+}
+
+.lnk-reg p{
+    margin-left: 4vw;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    margin-top: -1vh;
+    color: greenyellow;
+}
+
+.lnk-reg{
+    text-decoration: none;
+}

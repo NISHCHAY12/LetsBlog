@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+}
+
+p{
+  color: rgb(58, 58, 58);
+  font-size: 0.8rem;
+}
+
+i{
+  margin-block: 0;
+  height: 0;
+}
+
+/* 
+colors to be used:
+#1D5B79  = dark greenishblue
+#9BE8D8  = for text in dark background
+#C2884D  = dark orange
+#468B97  = lighter greenishblue
+greenyellow
+*/
