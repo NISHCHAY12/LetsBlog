@@ -19,6 +19,10 @@ nav h2{
     display: flex;
 }
 
+a{
+    text-decoration: none;
+}
+
 #nav-links a{
     text-decoration: none;
 }

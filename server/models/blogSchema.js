@@ -5,12 +5,16 @@ const BlogData = new mongoose.Schema({
         required: true,
         type: String,
     },
+    uname: {                               //user who created the blog
+        required: true,
+        type: String,
+    },
     blogheading: {                                //to indicate heading of blog
         required: true,
         type: String,
     },
     content: {
-        required: true,
+        required: [true, 'Rich text content is required'],
         type: String,
     },
     views: {

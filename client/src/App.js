@@ -5,8 +5,9 @@ import Reg from './components/logsign/signup'
 import Log from './components/logsign/login'
 import Create from './components/blog/createblog'
 import Browse from './components/blog/browse'
+import Read from './components/blog/read'
 import Postimg from './components/blog/postimg'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'  
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/login' element={<Log/>}/>
           <Route path='/browse' element={<Browse/>}/>
           <Route path='/postimg' element={<Postimg/>}/>
+          <Route path='/read' element={<Read/>}/>
         </Route> 
       </Routes>
     </BrowserRouter>

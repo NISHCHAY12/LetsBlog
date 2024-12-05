@@ -96,7 +96,7 @@ router.post('/login', async (req, res) => {
 
 router.post('/createblog', authenticate, async (req, res) => {
     const { blogheading, content } = req.body;
-    console.log('hi')
+    // console.log('hi')
 
     if (!blogheading || !content) {
         return res.status(422).json({ error: "pls fill in full details" });
@@ -108,9 +108,9 @@ router.post('/createblog', authenticate, async (req, res) => {
         const verifyed = jwt.verify(token, process.env.SECRET_KEY);
         user_id = verifyed._id
         const exists = await User.findOne({ _id: user_id });
+        uname = exists.name
 
-
-        const blog = new Blog({ user_id, blogheading, content });
+        const blog = new Blog({ user_id, uname, blogheading, content });
  
         await blog.save(); 
 
@@ -151,15 +151,15 @@ router.get('/profile', (req, res) => {
     res.send("Profile PAGE loaded.")
 })
 
-router.get('/postimg', authenticate , async (req, res) => {
-    const token = req.cookies.LetsBlog;
-    const verifyed = jwt.verify(token, process.env.SECRET_KEY);
-    user_id = verifyed._id
-    const exists = await Blog.find({ user_id: user_id });
-    var exist = exists[exists.length-1]._id;
-    // console.log(exist)
-    res.send(exist);
-})
+// router.get('/postimg', authenticate , async (req, res) => {
+//     const token = req.cookies.LetsBlog;
+//     const verifyed = jwt.verify(token, process.env.SECRET_KEY);
+//     user_id = verifyed._id
+//     const exists = await Blog.find({ user_id: user_id });
+//     var exist = exists[exists.length-1]._id;
+//     // console.log(exist)
+//     res.send(exist);
+// })
 
 
 
@@ -221,6 +221,82 @@ router.get('/postimg', authenticate , async (req, res) => {
 // })
 
 
+// router.post('/open', async (req, res) => {
+//     const { id } = req.body;
+//     console.log(id)
+//     if (!id) {
+//         return req.status(400).json({ error: 'error! could not fetch Blog' })
+//     }
+
+//     try {
+//         const exists = await Blog.findOne({ id: id });
+//         console.log(exists)
+ 
+
+
+//         // if (exists) {
+//         //     const match = await bcrypt.compare(password, exists.password);
+//         //     const token = await exists.generateAuthToken();
+//         //     console.log(token);
+
+//         //     res.cookie("LetsBlog", token, {
+//         //         expires: new Date(Date.now() + 25892000000),
+//         //         httpOnly: true
+//         //     });
+
+//         //     if (!match) {
+//         //         return res.status(400).json({ error: 'Invalid Credentials' })
+//         //     }
+//         //     else {
+//         //         return res.status(200).json({ message: 'user sign in successful' }) 
+//         //     }
+//         // }
+//         // else {
+//         //     return res.status(400).json({ error: 'Invalid Credentials' })
+//         // }
+//     } catch (err) {
+//         console.log(err);
+//     }
+
+// })
+
+
+router.post('/open', async (req, res) => {
+    const { _id } = req.body;
+    if (!_id) {
+        return res.status(400).json({ error: 'Error! Could not fetch Blog. ID is missing.' });
+    }
+
+    try {
+        const blog = await Blog.findOne({ _id });
+
+        if (!blog) {
+            return res.status(404).json({ error: 'Blog not found.' });
+        }
+
+        const myquery = { _id: blog._id };
+        const newvalues = { $inc: { views: 1 } }; // Use $inc to increment views by 1
+        
+        try {
+            await Blog.updateOne(myquery, newvalues, { upsert: false }); 
+        } catch (error) {
+            console.error('Error incrementing views:', error);  
+        }
+        
+
+        res.status(200).json({
+            redirectTo: '/read',
+            data: { blog },
+        });
+    } catch (err) {
+        console.error("Error fetching the blog:", err);
+        return res.status(500).json({ error: 'Internal Server Error. Please try again later.' });  
+    }
+});
+
+router.get('/read', async (req, res) => {
+    res.send("blog");
+});
 
 
 module.exports = router; 

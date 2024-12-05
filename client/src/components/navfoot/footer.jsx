@@ -6,20 +6,20 @@ import { FaTwitterSquare } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 
 const Footer = () => {
-    const [quote, setQuote] = useState("");
-    const [author, setAuthor] = useState("");
+    // const [quote, setQuote] = useState("");
+    // const [author, setAuthor] = useState("");
 
-    useEffect(() => {
-        fetch("http://api.quotable.io/random")
-            .then(res => res.json())
-            .then(
-                (quote) => {
-                    setQuote(quote.content);
-                    setAuthor(quote.author);
-                    // console.log(quote.content);
-                }
-            )
-    }, []);
+    // useEffect(() => {
+    //     fetch("http://api.quotable.io/random")
+    //         .then(res => res.json())
+    //         .then(
+    //             (quote) => {
+    //                 setQuote(quote.content);
+    //                 setAuthor(quote.author);
+    //                 // console.log(quote.content);
+    //             }
+    //         )
+    // }, []);
 
 
     return (
@@ -27,7 +27,7 @@ const Footer = () => {
             <div className='footsection'>
                 <h1>LetsBlog.</h1>
 
-                <h3><i>"{quote}"</i><p>- {author}</p></h3>
+                {/* <h3><i>"{quote}"</i><p>- {author}</p></h3> */}
                 
 
                 <div id='foot-links'>

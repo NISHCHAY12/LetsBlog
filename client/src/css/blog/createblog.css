@@ -109,3 +109,20 @@
     animation: shakeX; 
     animation-duration: 2s;
 }
+
+.rbox{
+    min-height: 70vh;
+    background-color: rgba(0, 0, 0, 0.449);
+    box-shadow: 2px 0px 30px 20px  rgba(0, 0, 0, 0.262);
+    width: 70vw;
+    margin-inline: auto;
+    padding-block: 2vh;
+    padding-inline: 2vw;
+    margin-top: 2vh;
+}
+
+.read_blog{
+    position: relative;
+    color: rgb(47, 231, 255);
+    font-size: medium;
+}

@@ -1,8 +1,13 @@
 import '../../css/blog/createblog.css'
-import Postimg from './postimg'
+// import Postimg from './postimg'
 import { useState } from 'react';
+import { NavLink , useNavigate } from 'react-router-dom';
+
+
 
 const Create = () => {
+    
+    const navigate = useNavigate();
 
     const [blog , setBlog] = useState({
         blogheading: "",content: ""
@@ -43,8 +48,9 @@ const Create = () => {
             window.alert("Error Occurred...Please try again.");
             console.log("Error Occurred...Please try again.");
         } else{
-            window.alert("Blog saved...proceed to add image.");
+            window.alert("Blog saved.");
             console.log("Blog saved...proceed to add image.");
+            navigate("/browse", { replace: true });
         }
         }catch(err){
             console.log(err)
@@ -83,7 +89,7 @@ const Create = () => {
                 </form>
             </div>
 
-            <Postimg/>
+            {/* <Postimg/> */}
 
             
 

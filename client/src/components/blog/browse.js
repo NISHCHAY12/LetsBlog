@@ -37,7 +37,7 @@ const Browse = () => {
             </div>
 
 
-            <Cloudt blog={obj.blog ? obj.blog : []}/>
+            <Cloudt blog={obj.blog ? obj.blog : [] }/>
 
         </div>
     )

@@ -16,11 +16,11 @@ const Navbar = () => {
 
     return(
         <nav>
-            <h2>LetsBlog.</h2>
+            <a href='/'><h2>LetsBlog.</h2></a>
 
             <div id='nav-links'>
                 <ul>
-                    <a href="#1"><li>Browse</li></a>
+                    <a href="/browse"><li>Browse</li></a>
                     <a href="/create"><li>Create Blog</li></a>
                     <a href="/login"><li>Sign In</li></a>
                 </ul>
